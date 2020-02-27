@@ -15,7 +15,7 @@ public class MainActivitySelectionRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_registration_main);
-    }
+    }    
 
     public void checkGeneralita(View view){
         final EditText txt_USN = (EditText) findViewById(R.id.editTextUSN);
