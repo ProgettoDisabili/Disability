@@ -56,8 +56,17 @@ public class MainActivitySelectionRegistration extends AppCompatActivity {
         String txtPSW = txt_PSW.getText().toString();
         boolean checkPSW=true;
 
-        if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,64})", txtPSW)) {
-            checkPSW=true;
+        final EditText txt_PSW2 = (EditText) findViewById(R.id.editTextPSWConfirm);
+        String txtPSW2 = txt_PSW2.getText().toString();
+
+        if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#$^+=!*()@%&]).{8,20}$", txtPSW)) {
+            if(txtPSW==txtPSW2){
+                checkPSW=true;
+            }
+            else {
+                checkPSW=false;
+                txt_PSW.setError("Le due password devono essere uguali");
+            }
         }
         else {
             checkPSW = false;
@@ -93,6 +102,16 @@ public class MainActivitySelectionRegistration extends AppCompatActivity {
             Intent intent = new Intent(this, HomePageMain.class);
             startActivity(intent);
         }
+
+        String dataRegistration[] = new String[7];
+
+        dataRegistration[0] = txtU;
+        dataRegistration[1] = txtN;
+        dataRegistration[2] = txtS;
+        dataRegistration[3] = txtPSW;
+        dataRegistration[4] = txtPSW2;
+        dataRegistration[5] = txtE;
+        dataRegistration[6] = txtPhone;
     }
 
 
