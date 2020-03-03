@@ -103,18 +103,16 @@ public class MainActivitySelectionRegistration extends AppCompatActivity {
             startActivity(intent);
         }
 
-        String dataRegistration[] = new String[7];
+        String dataRegistration[] = new String[6];
 
         dataRegistration[0] = txtU;
         dataRegistration[1] = txtN;
         dataRegistration[2] = txtS;
         dataRegistration[3] = txtPSW;
-        dataRegistration[4] = txtPSW2;
-        dataRegistration[5] = txtE;
-        dataRegistration[6] = txtPhone;
+        dataRegistration[4] = txtE;
+        dataRegistration[5] = txtPhone;
+
+        String urlAddress=null;
+        Sender s = new Sender(MainActivitySelectionRegistration.this, urlAddress, dataRegistration);
     }
-
-
-
-
 }
